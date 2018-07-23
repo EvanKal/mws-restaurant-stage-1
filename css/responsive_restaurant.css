@@ -1,14 +1,16 @@
-body, header, header nav, .filter-options, #restaurants-list, .inside, #maincontent,
+header, header nav, .filter-options, #restaurants-list, .inside, #maincontent,
 #restaurant-container, #reviews-container, #reviews-list, #reviews-list li{
   display: flex;
   flex-wrap: wrap;
 }
 
-header, #maincontent, .filter-options, #restaurants-list {
-  width: 100%;
-}
+
 
 @media screen and (max-width: 420px) {
+
+  header, #maincontent, .filter-options, #restaurants-list {
+    width: 100%;
+  }
 
   header nav {
     width: 100%;
@@ -162,6 +164,12 @@ header, #maincontent, .filter-options, #restaurants-list {
   width: 90%;
   margin: auto;
   padding: 10px 0 10px 0;
+}
+
+@media screen and (min-width: 421px) and (max-width: 800px) {
+
+.inside, header, #maincontent, #footer {
+  width: 100%;
 }
 
 
