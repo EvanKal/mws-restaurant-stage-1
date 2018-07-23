@@ -69,7 +69,7 @@ nav h1 a {
     padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
-    font-size: 17px;
+    font-size: auto;
     margin: 0;
     width: calc(50% - 80px);
 }
