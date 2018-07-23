@@ -1,5 +1,5 @@
 body, header, header nav, #maincontent,
-#restaurant-container, #reviews-container, #reviews-list, #reviews-list li{
+#restaurant-container,  #restaurant-container #restaurant-info,  #reviews-container, #reviews-list, #reviews-list li{
   display: flex;
   flex-wrap: wrap;
 }
@@ -333,6 +333,7 @@ body, header, header nav, #maincontent,
   #restaurant-container #restaurant-name {
     order: 1;
     width: 100%;
+    text-align: center;
   }
 
   #restaurant-container #image-container {
@@ -349,21 +350,82 @@ body, header, header nav, #maincontent,
     padding-bottom: 10px;
   }
 
-  #restaurant-container #restaurant-address {
+  #restaurant-container #restaurant-info {
     order: 3;
     width: 50%;
     margin: auto;
   }
 
+  #restaurant-container #restaurant-address {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+
+  }
+
   #restaurant-container #restaurant-hours {
-    order: 4;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #restaurant-container #restaurant-cuisine {
+    order: 5;
+    width: 100%;
+  }
+
+  .inside #maincontent #reviews-container {
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0 10px 0;
+  }
+
+  #reviews-list {
+    justify-content: center;
+  }
+
+  #reviews-container li{
+    padding: 0;
+    width: 80%;
+    border-radius: 30px 0px 30px 0px;
+  }
+
+  #reviews-container li .name, #reviews-container li .date {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    background-color: #252831;
+    color: white;
     width: 50%;
   }
 
-  /* #restaurant-container #restaurant-hours {
-    order: 4;
-    width: 50%;
-  } */
+  #reviews-container li .name {
+    font-size: 2em;
+    padding-left: 20px;
+  }
+
+  #reviews-container li .date {
+    padding-top: 15px;
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  #reviews-container li .rating {
+    background-color: #f4b342;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+  }
+
+  #reviews-container li .comment {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0 10px 0;
+
+  }
 
 
 
