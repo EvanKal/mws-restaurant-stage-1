@@ -4,11 +4,18 @@ let restaurants,
 var newMap
 var markers = []
 
+// Register Service Worker
+
+// if (!navigator.serviceWorker) return;
+if (navigator.serviceWorker) {
+navigator.serviceWorker.register('/sw.js')
+.then(function() { console.log("Service Worker Registered!"); });
+};
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  sWRegister();
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
@@ -209,14 +216,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
-// Register Service Worker
-function sWRegister() {
-console.log('Working...');
-if (!navigator.serviceWorker) return;
-if (navigator.serviceWorker) {
-navigator.serviceWorker.register('js/sw/index.js')
-.then(function() { console.log("Service Worker Registered!"); });
-};
-
-}
