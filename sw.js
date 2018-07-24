@@ -4,6 +4,8 @@ self.addEventListener('install', function(event) {
     caches.open('restaurantCache').then(function(cache) {
       return cache.addAll([
         '/',
+        'index.html',
+        'restaurant.html',
         'css/responsive_index.css',
         'css/responsive_restaurant.css',
         'css/styles.css',
@@ -19,14 +21,11 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      if (response) {
-        return response;
-      } else {
-        fetch(event.request);
+      if (response) return response;
+      return fetch(event.request);
       }
-    })
+    )
   )
 });
