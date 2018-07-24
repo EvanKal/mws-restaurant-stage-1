@@ -4,8 +4,17 @@ self.addEventListener('install', function(event) {
     caches.open('restaurantCache').then(function(cache) {
       return cache.addAll([
         '/',
-        'index.html',
         'restaurant.html',
+        'img/1.jpg',
+        'img/2.jpg',
+        'img/3.jpg',
+        'img/10.jpg',
+        'img/4.jpg',
+        'img/5.jpg',
+        'img/6.jpg',
+        'img/7.jpg',
+        'img/8.jpg',
+        'img/9.jpg',
         'css/responsive_index.css',
         'css/responsive_restaurant.css',
         'css/styles.css',
@@ -21,6 +30,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+
   event.respondWith(
     caches.match(event.request).then(function(response) {
       if (response) return response;
@@ -29,3 +39,12 @@ self.addEventListener('fetch', function(event) {
     )
   )
 });
+
+// let requestUrl = new URL(event.request.url);
+//
+// if (requestUrl.origin === location.origin) {
+//   if (requestUrl.pathname === '/') {
+//     event.respondWith(caches.match('/skeleton'));
+//     return;
+//   }
+// }
