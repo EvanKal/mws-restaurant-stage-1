@@ -1,4 +1,4 @@
-let staticCacheName = "restaurantCache3";
+let staticCacheName = "restaurantCache4";
 
 self.addEventListener('install', function(event) {
 
@@ -6,7 +6,7 @@ self.addEventListener('install', function(event) {
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/',
-        '/restaurant.html',
+        '/restaurant.html ',
         // '/img/1.jpg',
         // '/img/2.jpg',
         // '/img/3.jpg',
@@ -70,9 +70,9 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-        return cacheName.startsWith('restaurant') && cacheName != staticCacheName;
+        return cacheName.startsWith('restaurant') && cacheName !== staticCacheName;
       }).map(function(cacheName) {
-        return cache.delete(cacheName);
+        return caches.delete(cacheName);
       })
     );
     })
