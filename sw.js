@@ -1,4 +1,4 @@
-let staticCacheName = "restaurantCache18";
+let staticCacheName = "restaurantCache19";
 
 self.addEventListener('install', function(event) {
 

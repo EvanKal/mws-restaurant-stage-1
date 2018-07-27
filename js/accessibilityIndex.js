@@ -53,7 +53,6 @@ function mainAccessibility() {
   let restautantsInList;
   restautantsInList = $('#restaurants-list').find("li");
   let arrayFromList = restautantsInList.toArray();
-  console.log(arrayFromList);
 
   arrayFromList.forEach(function(elem) {
   $(elem).attr("tabindex", "0").attr("aria-labelledby", `nameOfLi${arrayFromList.indexOf(elem)}`);
@@ -70,7 +69,6 @@ function mainAccessibility() {
     restautantsInList = $('#restaurants-list').find("li");
     restautantsInList = $('#restaurants-list').find("li");
     let arrayFromList = restautantsInList.toArray();
-    console.log(arrayFromList);
 
     arrayFromList.forEach(function(elem) {
     $(elem).attr("tabindex", "0").attr("aria-labelledby", `nameOfLi${arrayFromList.indexOf(elem)}`);
