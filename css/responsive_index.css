@@ -1,13 +1,17 @@
-body, header, header nav, .filter-options, #restaurants-list {
+body,
+header,
+header nav,
+.filter-options,
+#restaurants-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-
-
 @media screen and (max-width: 420px) {
-
-  header, #maincontent, .filter-options, #restaurants-list {
+  header,
+  #maincontent,
+  .filter-options,
+  #restaurants-list {
     width: 100%;
   }
 
@@ -18,85 +22,86 @@ body, header, header nav, .filter-options, #restaurants-list {
   }
 
   header nav h1 {
-  margin: auto;
-  width: 100%;
-  font-size: 3vw;
-}
+    margin: auto;
+    width: 100%;
+    font-size: 3vw;
+  }
 
-.filter-options {
-  height: 100%;
-  justify-content: space-around;
-}
+  .filter-options {
+    height: 100%;
+    justify-content: space-around;
+  }
 
-.filter-options h2 {
+  .filter-options h2 {
     text-align: center;
     width: 100%;
     padding: 20px;
   }
 
-  .filter-options #neighborhoods-select, .filter-options #cuisines-select {
+  .filter-options #neighborhoods-select,
+  .filter-options #cuisines-select {
     width: 45%;
     margin-left: auto;
     margin-right: auto;
   }
 
   #restaurants-list {
-  padding: 0;
-  justify-content: center;
-}
+    padding: 0;
+    justify-content: center;
+  }
 
-#map-container {
-  height: 400px;
-}
-
+  #map-container {
+    height: 400px;
+  }
 }
 
 @media screen and (min-width: 421px) and (max-width: 800px) {
-
-  header, #maincontent, .filter-options, #restaurants-list {
+  header,
+  #maincontent,
+  .filter-options,
+  #restaurants-list {
     width: 100%;
   }
 
-#footer {
-  width: 100%;
-}
+  #footer {
+    width: 100%;
+  }
 
-.filter-options {
-  height: 100%;
-  justify-content: center;
-}
+  .filter-options {
+    height: 100%;
+    justify-content: center;
+  }
 
-#restaurants-list {
-padding: 0;
-justify-content: center;
-}
-
+  #restaurants-list {
+    padding: 0;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 801px) {
-
   /* header, #maincontent, .filter-options {
     width: 100%;
   } */
 
-body {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  body {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-header, #footer, #maincontent  {
-  width: 100%;
-}
+  header,
+  #footer,
+  #maincontent {
+    width: 100%;
+  }
 
-.filter-options {
-  height: 100%;
-  justify-content: center;
-}
+  .filter-options {
+    height: 100%;
+    justify-content: center;
+  }
 
-#restaurants-list {
-padding: 0;
-justify-content: center;
-}
-
+  #restaurants-list {
+    padding: 0;
+    justify-content: center;
+  }
 }
