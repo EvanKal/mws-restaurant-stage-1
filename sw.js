@@ -92,20 +92,3 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-
-self.addEventListener('fetch', function(event) {
-
-
-      let mapContentsRequests = [];
-      if (event.request.url.includes('mapbox.com')) {
-        let mapRequestclone = event.request.clone();
-        mapContentsRequests.push(mapRequestclone);
-      };
-
-      console.log(mapContentsRequests);
-
-
-  return new Promise.all(mapContentsRequests).then(function(response) {
-    console.log("all promises resolve for map")
-  })
-})
