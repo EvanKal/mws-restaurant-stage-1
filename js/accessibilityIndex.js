@@ -10,13 +10,13 @@ $(window).on('load', function() {
 // Define roles for main parts of the page
 
 function mainRoles() {
-  $("header").attr("role", "banner").attr("tabindex", "0").attr("aria-label", "");
+  $("header").attr("role", "banner").attr("tabindex", "0");
   $("main").attr("role", "main");
   $("footer").attr("role", "contentinfo").attr("tabindex", "0").attr("aria-label", "footer");
 }
 
 function headerAccessibility() {
-  $("nav").attr("tabindex", "-1");
+  $("nav").attr("aria-label", "Navigate home").attr("tabindex", "-1");
 }
 
 function mainAccessibility() {

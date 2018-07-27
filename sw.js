@@ -1,4 +1,4 @@
-let staticCacheName = "restaurantCache16";
+let staticCacheName = "restaurantCache18";
 
 self.addEventListener('install', function(event) {
 
@@ -13,7 +13,9 @@ self.addEventListener('install', function(event) {
         '/css/styles.css',
         '/js/dbhelper.js',
         '/js/main.js',
-        '/js/restaurant_info.js'
+        '/js/restaurant_info.js',
+        '/js/accessibilityIndex.js',
+        'js/accessibilityRestaurant.js'
       ]);
     })
   );
