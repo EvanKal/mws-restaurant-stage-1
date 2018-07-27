@@ -1,6 +1,8 @@
 //Initialize accessibility
 
 function initAccessibility() {
+
+
   mainRoles();
   headerAccessibility();
   mainAccessibility();
@@ -22,6 +24,10 @@ function headerAccessibility() {
 }
 
 function mainAccessibility() {
-  $("#map-container").attr("aria-label", "map application");
-  $("#map").attr("role", "application");
+// Map
+  $("#map-container").after("<label id=\"mapLabel\">Map of New York restaurants with a review</label>");
+  $("#map-container").attr("aria-labelledby", "mapLabel");
+  $("#map-container").attr("role", "application");
+  $("#map").find().attr("aria-hidden", "true");
+  $("#map").find().removeAttr("tabindex");
 }
