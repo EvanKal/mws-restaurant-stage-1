@@ -34,8 +34,9 @@ function mainAccessibility() {
   mapContainer.after(
     '<label id="mapLabel" style="display: none">Map of New York restaurants with a review</label>'
   );
-  mapContainer.attr("aria-labelledby", "mapLabel");
-  mapContainer.attr("role", "application");
+  mapContainer
+    .attr("aria-labelledby", "mapLabel");
+    .attr("role", "application");
   // $("#map").attr("aria-hidden", "true");
   map
     .find("img")
@@ -63,14 +64,16 @@ function mainAccessibility() {
   allNeighbourhoods
     .attr("aria-labelledby", "filterResults")
     .attr("role", "combobox");
-  allNeighbourhoods.attr("aria-owns", "restaurants-list");
-  allCousines.attr("aria-labelledby", "filterResults");
-  allCousines.attr("aria-controls", "restaurants-list");
+    .attr("aria-controls", "restaurants-list");
+  allCousines
+    .attr("aria-labelledby", "filterResults");
+    .attr("aria-controls", "restaurants-list");
 
   let restautantsList = $("#restaurants-list");
 
-  restautantsList.attr("aria-live", "polite");
-  restautantsList.attr("aria-atomic", "true");
+  restautantsList
+    .attr("aria-live", "polite");
+    .attr("aria-atomic", "true");
 
   // Restaurants in restaurantsList
 
