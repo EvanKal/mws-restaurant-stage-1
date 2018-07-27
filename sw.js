@@ -1,4 +1,4 @@
-let staticCacheName = "restaurantCache10";
+let staticCacheName = "restaurantCache15";
 
 self.addEventListener('install', function(event) {
 
@@ -7,6 +7,7 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/',
         '/restaurant.html',
+        // '/data/restaurants.json',
         '/css/responsive_index.css',
         '/css/responsive_restaurant.css',
         '/css/styles.css',
@@ -32,10 +33,13 @@ self.addEventListener('fetch', function(event) {
       }
 // if there is NOT a match then fetch it from the network, but before that
 // check if it is a request for a restaurant page and if yes cache its html
-    if (!event.request.url.includes('restaurant.html?id=')) {
+// UPDATE: I added the .json file for automatic caching bc the respective
+// request wouldn't get matched in the cache when offline...
+    if (!event.request.url.includes('restaurant.html?id=') && !event.request.url.includes('data/restaurants')) {
     return fetch(event.request);
   } else {
       let requestClone = event.request.clone();
+      console.log(requestClone);
 
       return fetch(requestClone).then(function(response) {
         if(!response) {
