@@ -35,9 +35,13 @@ function mainAccessibility() {
     '<label id="mapLabel" style="display: none">Map of New York restaurants with a review</label>'
   );
   mapContainer
-    .attr("aria-labelledby", "mapLabel");
+    .attr("tabindex", "-1");
+
+  map
+    .attr("tabindex", "0")
+    .attr("aria-labelledby", "mapLabel")
     .attr("role", "application");
-  // $("#map").attr("aria-hidden", "true");
+
   map
     .find("img")
     .attr("tabindex", "-1")
@@ -63,16 +67,16 @@ function mainAccessibility() {
     );
   allNeighbourhoods
     .attr("aria-labelledby", "filterResults")
-    .attr("role", "combobox");
+    .attr("role", "combobox")
     .attr("aria-controls", "restaurants-list");
   allCousines
-    .attr("aria-labelledby", "filterResults");
+    .attr("aria-labelledby", "filterResults")
     .attr("aria-controls", "restaurants-list");
 
   let restautantsList = $("#restaurants-list");
 
   restautantsList
-    .attr("aria-live", "polite");
+    .attr("aria-live", "polite")
     .attr("aria-atomic", "true");
 
   // Restaurants in restaurantsList
@@ -95,7 +99,7 @@ function mainAccessibility() {
       .find("a")
       .attr("tabindex", "0");
     $(elem)
-      .find("h1")
+      .find("h3")
       .attr("id", `nameOfLi${arrayFromList.indexOf(elem)}`);
   });
 
@@ -119,7 +123,7 @@ function mainAccessibility() {
         .find("a")
         .attr("tabindex", "0");
       $(elem)
-        .find("h1")
+        .find("h3")
         .attr("id", `nameOfLi${arrayFromList.indexOf(elem)}`);
     });
   });

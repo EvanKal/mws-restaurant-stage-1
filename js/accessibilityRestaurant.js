@@ -22,14 +22,20 @@ function mainRoles() {
 
 function headerAccessibility() {
   $("nav")
-    .attr("tabindex", "-1")
-    .attr("aria-hidden", "true");
+    .attr("tabindex", "-1");
   $("nav")
     .find("a")
-    .attr("tabindex", "-1");
+    .attr("tabindex", "0");
   $("#breadcrumb")
-    .attr("tabindex", "0")
-    .attr("aria-label", "navigation");
+    .attr("aria-label", "breadcrumb")
+    .attr("tabindex", "0");
+
+
+  $("#breadcrumb li:last")
+    .attr("aria-current", "page")
+    .attr("tabindex", "0");
+
+
 }
 
 function mainAccessibility() {
@@ -40,9 +46,13 @@ function mainAccessibility() {
   mapContainer.after(
     '<label id="mapLabel" style="display: none">Map of New York with the restaurant\'s location</label>'
   );
-  mapContainer.attr("aria-labelledby", "mapLabel");
-  mapContainer.attr("role", "application");
-  // $("#map").attr("aria-hidden", "true");
+  mapContainer
+    .attr("tabindex", "-1");
+
+  map
+    .attr("tabindex", "0")
+    .attr("aria-labelledby", "mapLabel")
+    .attr("role", "application");
   map
     .find("img")
     .attr("tabindex", "-1")
